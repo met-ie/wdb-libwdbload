@@ -130,7 +130,7 @@ public:
 		//const char * rawData = reinterpret_cast<const char *>(& data[0]);
 		const char * rawData = reinterpret_cast<const char *>(values_);
 		size_t binarySize = noOfValues_ * sizeof(float) / sizeof(char);
-		const std::string binaryData(rawData, binarySize);
+		pqxx::binarystring binaryData(rawData, binarySize);
 		// Write
 		R = T.prepared("WCIWriteByteA")
 					  (binaryData)

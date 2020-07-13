@@ -127,7 +127,7 @@ public:
 		const std::vector<float> data(values_, values_ + noOfValues_);
 		const char * rawData = reinterpret_cast<const char *>(& data[0]);
 		size_t binarySize = noOfValues_ * sizeof(float) / sizeof(char);
-		const std::string binaryData(rawData, binarySize);
+		pqxx::binarystring binaryData(rawData, binarySize);
 		// Write
 		for ( std::vector <wdb::load::WdbLevel>::const_iterator level = levels_.begin(); level != levels_.end(); ++ level )
 		{

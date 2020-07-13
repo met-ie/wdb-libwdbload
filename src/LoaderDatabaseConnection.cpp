@@ -331,34 +331,17 @@ void LoaderDatabaseConnection::setup_()
 			"$11::integer,"
 			"$12::integer"
 			")" )
-			("bytea", treat_binary )
-			("varchar", treat_direct )
-			("varchar", treat_direct )
-			("varchar", treat_direct )
-			("varchar", treat_direct )
-			("varchar", treat_direct )
-			("varchar", treat_direct )
-			("varchar", treat_direct )
-			("real", treat_direct )
-			("real", treat_direct )
-			("int4", treat_direct )
-			("int4", treat_direct );
+			;
 
 	// Statement Get PlaceId
 	prepare("GetPlaceName",
 			"SELECT * FROM wci.getplacename ($1, $2, $3, $4, $5, $6, $7)" )
-		   ("int4", treat_direct )
-		   ("int4", treat_direct )
-		   ("real", treat_direct )
-		   ("real", treat_direct )
-		   ("real", treat_direct )
-		   ("real", treat_direct )
-		   ("varchar", treat_direct );
+		   ;
 
 	// Statement insertSrid
 	prepare("InfoParameterUnit",
 			"SELECT * FROM wci.getunit(NULL) WHERE unitname=$1" )
-		   ("varchar", treat_direct );
+		   ;
 
 	// Statement Insert value
 	prepare("WriteWCI",
@@ -379,20 +362,7 @@ void LoaderDatabaseConnection::setup_()
 			"$13::integer,"
 			"$14::integer"
 			")" )
-			("bytea", treat_binary )
-			("int8", treat_direct )
-			("int8", treat_direct )
-			("varchar", treat_direct )
-			("varchar", treat_direct )
-			("varchar", treat_direct )
-			("int4", treat_direct )
-			("int4", treat_direct )
-			("int4", treat_direct )
-			("real", treat_direct )
-			("real", treat_direct )
-			("int4", treat_direct )
-			("int4", treat_direct )
-			("int4", treat_direct );
+			;
 }
 
 std::string LoaderDatabaseConnection::dataProvider_(const std::string & given) const
